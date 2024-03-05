@@ -1,0 +1,8 @@
+- name: Monitor Windows Scheduled Tasks
+  hosts: all
+  become: false
+  gather_facts: false
+  tasks:
+  - community.windows.win_scheduled_task_stat:
+      name: task name
+    register: task_stat
